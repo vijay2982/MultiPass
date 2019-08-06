@@ -15,7 +15,8 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone https://github.com/Shopify/storefront-api-examples.git` this repository
+* `git clone https://github.com/Shopify/MultiPass.git`
+* `cd MultiPass`
 * `cd react-graphql-client`
 * `yarn install`
 
