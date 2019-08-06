@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import Client from 'graphql-js-client';
 import typeBundle from './types';
-import '../../shared/app.css';
+import './App.css';
 
 export const client = new Client(typeBundle, {
-  url: 'https://graphql.myshopify.com/api/graphql',
+  // Paste your shopify url at below line before you proceed
+  url: 'YOUR_SOPIFY_URL_HERE',
   fetcherOptions: {
+    // Paste your Access Token at below line before you proceed
     headers: {
-      'X-Shopify-Storefront-Access-Token': 'dd4d4dc146542ba7763305d71d1b3d38'
+      'X-Shopify-Storefront-Access-Token': 'YOUR_ACCESS_TOKEN_HERE'
     }
   }
 });

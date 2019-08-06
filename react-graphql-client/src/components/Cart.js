@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
 import LineItem from './LineItem';
+import multipassify_config from '../multipassify_config';
 
 class Cart extends Component {
   constructor(props) {
     super(props);
-
     this.openCheckout = this.openCheckout.bind(this);
   }
 
   openCheckout() {
-    window.open(this.props.checkout.webUrl);
+    const url = multipassify_config(this.props.checkout.webUrl);
+    window.open(url);
   }
 
   render() {

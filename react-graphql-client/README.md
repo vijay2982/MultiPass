@@ -16,7 +16,6 @@ You will need the following things properly installed on your computer.
 ## Installation
 
 * `git clone https://github.com/Shopify/storefront-api-examples.git` this repository
-* `cd storefront-api-examples`
 * `cd react-graphql-client`
 * `yarn install`
 
@@ -26,10 +25,10 @@ If you would like to connect your store to this example, open up `src/index.js` 
 
 ```js
 export const client = new Client(typeBundle, {
-  url: 'https://your-shop-name.myshopify.com/api/graphql',
+  url: 'YOUR_SOPIFY_URL',
   fetcherOptions: {
     headers: {
-      'X-Shopify-Storefront-Access-Token': 'your-storefront-access-token'
+      'X-Shopify-Storefront-Access-Token': 'YOUR_ACCESS_TOKEN_HERE'
     }
   }
 });
@@ -37,11 +36,19 @@ export const client = new Client(typeBundle, {
 
 ## Running
 
-Start a local server:
+To start the local development server run below command:
 
-```
-yarn start
-```
+* `yarn start`
+
+## Multipass Integration Start 
+
+## Some Guidelines
+1. In order to generate `url` using multipass we have to feed `checkout` url to function exported in multipass_config.js file.
+2. Multipass will generate url using `HMAC` and `SHA512` hash algorithm and encode it using `base64` algorithm.
+3. The Url which was fed to multipass will be used as the `return_to` url in customer data provided by customer.
+4. We have used sample customer data. If you want to use different customer data then change `customerData` field to the data you want to give it in `multipass_config.js` file.
+
+## Multipass Integration End 
 
 * Visit your app at [http://localhost:3000](http://localhost:3000).
 
